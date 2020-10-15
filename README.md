@@ -1,0 +1,7 @@
+## Flight Delay Prediction and Delay type Classifier
+
+For this project I obtained 15 million flights from 2019 from SQL, from all around the US. EDA can be seen in the exploratory data analysis notebook. As a way of guiding possible feature engineering for regression and classification, flights were split into region based off of NOAA, flights were also given moncors to denote long and short hall. While a weather API was used (darksky) given the request limit and the size of the data set, this proved to be less than useful. While regression error is high, it is better than baseline. Features were limited by the amount of information we were given for 2020 flights. 
+
+For classification tasks (multinomial and binomial) cancelled flights and undersampled flights were boosted using bootstrapping and SMOTE, but bootstrapping had the most robust impact on improving ROC-AUC scores and F1 scores, thus minimizing any bia-varience trade off. 
+
+For both tasks, ensemble methods were used, and boosting proved to be the best method to improve results. For future iterations, grids can be created from lat long departure, and deep learning could be used with tensor dimensions dictated by the number of grids. 
